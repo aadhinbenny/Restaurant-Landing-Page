@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Portfolio</title>
+    <style>
+        :root {
+            --primary: #0f0f63;
+            --secondary: #717f71;
+            --light: #000000;
+            --accent: #000000;
+            --gold: #fb8200;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #000000;
+            color: #133c2c;
+            line-height: 1.6;
+            background-image: url('https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?q=80&w=2070&auto=format&fit=crop');
+            background-attachment: fixed;
+            background-size: cover;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgb(253, 251, 248) 0%, rgb(19, 16, 15) 100%);
+            color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/rice-paper-3.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(241, 241, 241, 0.844);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-style:var(--gold);
+            margin-bottom: 2rem;
+            color: var(--gold);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .art-card {
+            background: rgb(0, 0, 0);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+        
+        .art-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.896);
+        }
+        
+        .art-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
+        }
+        
+        .art-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .art-card:hover .art-img {
+            transform: scale(1.03);
+        }
+        
+        .art-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .art-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .art-medium {
+            color: var(--primary);
+            font-style:oblique;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .view-btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: var(--gold);
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+        }
+        
+        .view-btn:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: rgb(186, 91, 24);
+            color: var(--light);
+            position: relative;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        
+        
+      
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+        }
+    </style>
+   
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>My Art Gallery</h1>
+            <b><p><h2> "Paintings don not fade — they just sink deeper into memory”</h2>
+</p></b>
+
+<ul>
+                <b><a href="#" class="active">Portfolio</a></b>
+                <b><a href="#">About</a></b>
+                <b><a href="#">Contact</a></b>
+            </ul>
+            
+        </div>
+    </header>
+
+    <main class="portfolio-grid">
+        <div class="art-card">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1902&auto=format&fit=crop" alt="Golden Sunset" class="art-img">
+            <div class="art-info">
+                <h3 class="art-title">Golden Sunset</h3>
+
+                <a href="#" class="view-btn">View Details</a>
+            </div>
+        </div>
+
+        <div class="art-card">
+            <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?q=80&w=1935&auto=format&fit=crop" alt="Misty Mountains" class="art-img">
+            <div class="art-info">
+                <h3 class="art-title">Misty Mountains</h3>
+          
+                <a href="#" class="view-btn">View Details</a>
+            </div>
+        </div>
+
+        <div class="art-card">
+            <img src="https://s3.amazonaws.com/images.ecwid.com/images/30164206/1492295284.jpg" alt="Vibrant Freedom" class="art-img">
+            <div class="art-info">
+                <h3 class="art-title">Vibrant Freedom</h3>
+                <a href="#" class="view-btn">View Details</a>
+            </div>
+        </div>
+
+        <div class="art-card">
+            <img src="http://images.freecreatives.com/wp-content/uploads/2015/03/f-23-painting-flowers.jpg" alt="Floral Dreams" class="art-img">
+            <div class="art-info">
+                <h3 class="art-title">Floral Dreams</h3>
+               
+                <a href="#" class="view-btn">View Details</a>
+            </div>
+        </div>
+
+        <div class="art-card">
+            <img src="https://wallpapers.com/images/hd/art-pictures-a9wvij6m1a61ms8a.jpg" alt="Reflections of the soul" class="art-img">
+            <div class="art-info">
+                <h3 class="art-title">Reflections of the Soul</h3>
+                
+                <a href="#" class="view-btn">View Details</a>
+            </div>
+        </div>
+
+      
+    </main>
+
+    <footer>
+        <div class="footer-content">
+           <b> "Art is not what you see, but what you make others see."– EDGAR DEGAS</b>
+           
+        </div>
+    </footer>
+
+</body>
+</html>
